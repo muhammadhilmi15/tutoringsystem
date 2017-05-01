@@ -25,7 +25,7 @@ $tampil3 = mysqli_query($koneksi, "SELECT * FROM kategori");
           }
         }
         ?>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Id</th>
@@ -41,7 +41,7 @@ $tampil3 = mysqli_query($koneksi, "SELECT * FROM kategori");
                 <td><?php echo $row['kategori']; ?></td>
                 <td><?php echo $row['bab']; ?></td>
                 <td>
-                  <a class="btn btn-primary" href="proses-hapus-bab.php?id_bab=<?php echo $row['id_bab'];?>"><i class="fa fa-trash-o"></i> Hapus</a>
+                  <a class="btn btn-danger" href="proses-hapus-bab.php?id_bab=<?php echo $row['id_bab'];?>"><i class="fa fa-trash-o"></i></a>
                   <a
                     class="btn btn-primary editDialog2 detail-data"
                     data-toggle="modal" href="#modalEdit"
@@ -49,7 +49,7 @@ $tampil3 = mysqli_query($koneksi, "SELECT * FROM kategori");
                     data-idkategori="<?php echo $row['id_kategori'];?>"
                     data-kategori="<?php echo $row['kategori'];?>"
                     data-bab="<?php echo $row['bab'];?>">
-                    <i class="fa fa-edit"></i> Edit
+                    <i class="fa fa-edit"></i>
                   </a>
                 </td>
               </tr>

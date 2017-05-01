@@ -38,9 +38,6 @@ $tingkatan=$row2['tingkatan'];
           <a href="#" class="x-navigation-control"></a>
       </li>
       <li class="xn-profile">
-        <a href="index.php" class="profile-mini">
-          <img src="img/ocean.jpg"  alt="John Doe"/>
-        </a>
         <div class="profile">
           <div class="profile-data">
             <div class="profile-data-name"><?php echo $waktu;?></div>

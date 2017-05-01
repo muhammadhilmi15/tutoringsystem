@@ -23,7 +23,7 @@ $tampil = mysqli_query($koneksi, "SELECT * FROM materi m, kategori k,bab b, ting
           }
         }
         ?>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Id</th>
@@ -43,8 +43,8 @@ $tampil = mysqli_query($koneksi, "SELECT * FROM materi m, kategori k,bab b, ting
                 <td><?php echo $row['tingkatan']; ?></td>
                 <td><?php echo $row['nama']; ?></td>
                 <td>
-                  <a class="btn btn-primary" href="proses-hapus-materi.php?id_materi=<?php echo $row['id_materi'];?>"><i class="fa fa-trash-o"></i> Hapus</a>
-                  <a class="btn btn-primary" href="index.php?p=edit-materi&&id_materi=<?php echo $row['id_materi'];?>"><i class="fa fa-edit"></i> Edit</a>
+                  <a class="btn btn-danger" href="proses-hapus-materi.php?id_materi=<?php echo $row['id_materi'];?>"><i class="fa fa-trash-o"></i></a>
+                  <a class="btn btn-primary" href="index.php?p=edit-materi&&id_materi=<?php echo $row['id_materi'];?>"><i class="fa fa-edit"></i></a>
                 </td>
               </tr>
               <?php } ?>

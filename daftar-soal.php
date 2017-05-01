@@ -23,7 +23,7 @@ $tampil = mysqli_query($koneksi, "SELECT * FROM soal s, materi m, tingkatan t WH
           }
         }
         ?>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Id</th>
@@ -48,9 +48,9 @@ $tampil = mysqli_query($koneksi, "SELECT * FROM soal s, materi m, tingkatan t WH
                 <td><?php echo $row['opsi_satu']; ?></td>
                 <td><?php echo $row['opsi_dua']; ?></td>
                 <td><?php echo $row['opsi_tiga']; ?></td>
-                <td>
-                  <a class="btn btn-primary" href="proses-hapus-soal.php?id_soal=<?php echo $row['id_soal'];?>"><i class="fa fa-trash-o"></i> Hapus</a>
-                  <a class="btn btn-primary" href="index.php?p=edit-soal&&id_soal=<?php echo $row['id_soal'];?>"><i class="fa fa-edit"></i> Edit</a>
+                <td style="width:120px">
+                  <a class="btn btn-danger" href="proses-hapus-soal.php?id_soal=<?php echo $row['id_soal'];?>"><i class="fa fa-trash-o"></i></a>
+                  <a class="btn btn-primary" href="index.php?p=edit-soal&&id_soal=<?php echo $row['id_soal'];?>"><i class="fa fa-edit"></i></a>
                 </td>
               </tr>
               <?php } ?>

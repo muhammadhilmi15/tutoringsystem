@@ -1,67 +1,75 @@
 <?php
 include'koneksi.php';
-$materi=mysqli_query($koneksi,"SELECT * FROM materi WHERE id_tingkatan=$id_tingkatan");
+$materi=mysqli_query($koneksi,"SELECT * FROM materi m, kategori k, bab b, tingkatan t WHERE m.id_kategori=k.id_kategori AND m.id_bab=b.id_bab AND m.id_tingkatan=t.id_tingkatan AND id_tingkatan=$id_tingkatan");
+$materi2=mysqli_query($koneksi,"SELECT * FROM materi m, kategori k, bab b, tingkatan t WHERE m.id_kategori=k.id_kategori AND m.id_bab=b.id_bab AND m.id_tingkatan=t.id_tingkatan");
+$materi3=mysqli_query($koneksi,"SELECT * FROM materi m, kategori k WHERE m.id_kategori=k.id_kategori");
 ?>
 <br>
 <div class="page-title">
-    <h2><span class="fa fa-arrow-circle-o-left"></span> List Materi</h2>
+  <h2><span class="fa fa-arrow-circle-o-left"></span> List Materi</h2>
 </div>
 <div class="row">
-    <div class="col-md-9">
-        <div class="panel panel-default">
-            <div class="panel-body posts">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="post-item">
-                          <?php while ($row=mysqli_fetch_array($materi)) { ?>
-                            <div class="post-title">
-                                <a href="pages-blog-post.html">Outer space</a>
-                            </div>
-                            <div class="post-date"><span class="fa fa-calendar"></span> October 23, 2014 / <a href="pages-blog-post.html#comments">3 Comments</a> / <a href="pages-profile.html">by Dmitry Ivaniuk</a></div>
-                            <div class="post-text">
-                                <p>Outer space, or simply space, is the void that exists between celestial bodies, including the Earth. It is not completely empty, but consists of a hard vacuum containing a low density of particles: predominantly a plasma of hydrogen and helium.</p>
-                            </div>
-                            <div class="post-row">
-                                <button class="btn btn-default btn-rounded pull-right">Read more &RightArrow;</button>
-                            </div>
-                          <?php } ?>
-                        </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body posts">
+        <div class="row">
+          <div class="col-md-12">
+            <?php if (!empty($tingkatan)) { ?>
+              <?php while ($row=mysqli_fetch_array($materi)) { ?>
+                <div class="post-item">
+                  <div class="post-title">
+                    <a href="index.php?p=lihat-materi-detail&&id_materi=<?php echo $row['id_materi'];?>"><?php echo $row['nama'];?></a>
+                  </div>
+                  <div class="post-date"><span class="fa fa-book"></span><?php echo $row['kategori'];?> / <?php echo $row['bab'];?> / <?php echo $row['tingkatan'];?></div>
+                  <div class="post-text">
+                    <?php echo $row['materi'];?>
+                  </div>
+                  <div class="post-row">
+                    <a class="btn btn-default btn-rounded pull-right" href="index.php?p=lihat-materi-detail&&id_materi=<?php echo $row['id_materi'];?>">Read more &RightArrow;</a>
+                  </div>
+                </div>
+                <?php } ?>
+                <?php } elseif (empty($tingkatan)) { ?>
+                  <?php while ($row=mysqli_fetch_array($materi2)) { ?>
+                    <div class="post-item">
+                      <div class="post-title">
+                        <a href="index.php?p=lihat-materi-detail&&id_materi=<?php echo $row['id_materi'];?>"><?php echo $row['nama'];?></a>
+                      </div>
+                      <div class="post-date"><span class="fa fa-book"></span><?php echo $row['kategori'];?> / <?php echo $row['bab'];?> / <?php echo $row['tingkatan'];?></div>
+                      <div class="post-text">
+                        <?php echo $row['materi'];?>
+                      </div>
+                      <div class="post-row">
+                        <a class="btn btn-default btn-rounded pull-right" href="index.php?p=lihat-materi-detail&&id_materi=<?php echo $row['id_materi'];?>">Read more &RightArrow;</a>
+                      </div>
                     </div>
+                    <?php } ?>
+                    <?php } ?>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
 
-        <ul class="pagination pagination-sm pull-right push-down-20">
-            <li class="disabled"><a href="#">«</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">»</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h3>Bab</h3>
-                <div class="links">
-                    <a href="#">Front-end <span class="label label-default">195</span></a>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h3>Recent</h3>
+            <ul class="pagination pagination-sm pull-right push-down-20">
+              <li class="disabled"><a href="#">«</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">»</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h3>Materi Terbaru</h3>
                 <div class="links small">
-                    <a href="#">Vestibulum porttitor neque vitae odio vulputate molestie</a>
-                    <a href="#">Etiam tellus mi, interdum id nulla in</a>
-                    <a href="#">Cras eu tincidunt quam</a>
-                    <a href="#">Donec rhoncus quam tortor, id pulvinar erat elementum eu</a>
-                    <a href="#">Nunc lorem est, suscipit bibendum</a>
-                    <a href="#">Fusce sollicitudin quis turpis eget mollis</a>
-                    <a href="#">Cras eget sagittis dui, et mollis tortor</a>
+                  <?php while ($row3=mysqli_fetch_array($materi3)) { ?>
+                    <a href="index.php?p=lihat-materi-detail&&id_materi=<?php echo $row3['id_materi'];?>"><?php echo $row3['nama'];?></a>
+                    <?php } ?>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
+          </div>

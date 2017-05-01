@@ -23,7 +23,7 @@ $tampil=mysqli_query($koneksi,"SELECT * FROM kategori");
           }
         }
         ?>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Id</th>
@@ -37,13 +37,13 @@ $tampil=mysqli_query($koneksi,"SELECT * FROM kategori");
                 <td><?php echo $row['id_kategori']; ?></td>
                 <td><?php echo $row['kategori']; ?></td>
                 <td>
-                  <a class="btn btn-primary" href="proses-hapus-kat.php?id_kategori=<?php echo $row['id_kategori'];?>"><i class="fa fa-trash-o"></i> Hapus</a>
+                  <a class="btn btn-danger" href="proses-hapus-kat.php?id_kategori=<?php echo $row['id_kategori'];?>"><i class="fa fa-trash-o"></i></a>
                   <a
                     class="btn btn-primary editDialog detail-data"
                     data-toggle="modal" href="#modalEdit"
                     data-id="<?php echo $row['id_kategori'];?>"
                     data-nama="<?php echo $row['kategori'];?>">
-                    <i class="fa fa-edit"></i> Edit
+                    <i class="fa fa-edit"></i>
                   </a>
                 </td>
               </tr>

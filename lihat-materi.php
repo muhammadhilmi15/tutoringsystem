@@ -10,12 +10,12 @@ $materi3=mysqli_query($koneksi,"SELECT * FROM materi m, kategori k WHERE m.id_ka
 </div>
 <div class="row">
   <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-body posts">
-        <div class="row">
-          <div class="col-md-12">
-            <?php if (!empty($tingkatan)) { ?>
-              <?php while ($row=mysqli_fetch_array($materi)) { ?>
+    <?php if (!empty($tingkatan)) { ?>
+      <?php while ($row=mysqli_fetch_array($materi)) { ?>
+        <div class="panel panel-default">
+          <div class="panel-body posts">
+            <div class="row">
+              <div class="col-md-12">
                 <div class="post-item">
                   <div class="post-title">
                     <a href="index.php?p=lihat-materi-detail&&id_materi=<?php echo $row['id_materi'];?>"><?php echo $row['nama'];?></a>
@@ -28,9 +28,17 @@ $materi3=mysqli_query($koneksi,"SELECT * FROM materi m, kategori k WHERE m.id_ka
                     <a class="btn btn-default btn-rounded pull-right" href="index.php?p=lihat-materi-detail&&id_materi=<?php echo $row['id_materi'];?>">Read more &RightArrow;</a>
                   </div>
                 </div>
-                <?php } ?>
-                <?php } elseif (empty($tingkatan)) { ?>
-                  <?php while ($row=mysqli_fetch_array($materi2)) { ?>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php } ?>
+        <?php } elseif (empty($tingkatan)) { ?>
+          <?php while ($row=mysqli_fetch_array($materi2)) { ?>
+            <div class="panel panel-default">
+              <div class="panel-body posts">
+                <div class="row">
+                  <div class="col-md-12">
                     <div class="post-item">
                       <div class="post-title">
                         <a href="index.php?p=lihat-materi-detail&&id_materi=<?php echo $row['id_materi'];?>"><?php echo $row['nama'];?></a>
@@ -43,12 +51,12 @@ $materi3=mysqli_query($koneksi,"SELECT * FROM materi m, kategori k WHERE m.id_ka
                         <a class="btn btn-default btn-rounded pull-right" href="index.php?p=lihat-materi-detail&&id_materi=<?php echo $row['id_materi'];?>">Read more &RightArrow;</a>
                       </div>
                     </div>
-                    <?php } ?>
-                    <?php } ?>
                   </div>
                 </div>
               </div>
             </div>
+            <?php } ?>
+            <?php } ?>
 
             <ul class="pagination pagination-sm pull-right push-down-20">
               <li class="disabled"><a href="#">«</a></li>

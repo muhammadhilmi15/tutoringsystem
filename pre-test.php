@@ -1,6 +1,7 @@
 <?php
 include 'koneksi.php';
 $soal=mysqli_query($koneksi,"SELECT * FROM soal");
+$opsirows=0;
 ?>
 <div class="col-md-12">
   <form class="form-horizontal">
@@ -30,42 +31,44 @@ $soal=mysqli_query($koneksi,"SELECT * FROM soal");
               </ul>
             </div>
             <div class="panel-body">
-              <?php while ($row=mysqli_fetch_array($soal)) { ?>
-                <h4 for=""><?php echo $row['soal']?></h4>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="optionsRadios" value="option1"/>
-                    <?php echo $row['opsi_satu'];?>
-                  </label>
+              <form class="" action="index.html" method="post">
+                <?php while ($row=mysqli_fetch_array($soal)) { ?>
+                    <h4><?php echo $row['soal']?></h4>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="jawaban" value="a"/>
+                        <?php echo $row['opsi_satu'];?>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="jawaban" value="b"/>
+                        <?php echo $row['opsi_dua'];?>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="jawaban" value="c"/>
+                        <?php echo $row['opsi_tiga'];?>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="jawaban" value="d"/>
+                        <?php echo $row['opsi_benar'];?>
+                      </label>
+                    </div>
+                    <?php } ?>
+                  </form>
                 </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="optionsRadios" value="option2"/>
-                    <?php echo $row['opsi_dua'];?>
-                  </label>
+                <div class="panel-footer">
+                  <input type="reset" class="btn btn-default" value="Reset">
+                  <input type="submit" class="btn btn-primary pull-right" value="Submit">
                 </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="optionsRadios" value="option3"/>
-                    <?php echo $row['opsi_tiga'];?>
-                  </label>
-                </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="optionsRadios" value="option3"/>
-                    <?php echo $row['opsi_benar'];?>
-                  </label>
-                </div>
-                <?php } ?>
-              </div>
-              <div class="panel-footer">
-                <input type="reset" class="btn btn-default" value="Reset">
-                <input type="submit" class="btn btn-primary pull-right" value="Submit">
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
 
-  </div>
+    </div>

@@ -25,7 +25,7 @@ $tampil3 = mysqli_query($koneksi, "SELECT * FROM kategori");
           }
         }
         ?>
-        <table class="table table-striped table-bordered">
+        <table id="dataTables" class="table table-bordered table-hover">
           <thead>
             <tr>
               <th>Id</th>

@@ -23,7 +23,7 @@ $tampil=mysqli_query($koneksi,"SELECT * FROM kategori");
           }
         }
         ?>
-        <table class="table table-striped table-bordered">
+        <table id="dataTables" class="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Id</th>

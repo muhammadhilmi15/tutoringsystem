@@ -23,7 +23,7 @@ $tampil = mysqli_query($koneksi, "SELECT * FROM materi m, kategori k,bab b, ting
           }
         }
         ?>
-        <table class="table table-striped table-bordered">
+        <table id="dataTables" class="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Id</th>
@@ -31,7 +31,7 @@ $tampil = mysqli_query($koneksi, "SELECT * FROM materi m, kategori k,bab b, ting
               <th>Bab</th>
               <th>Tingkatan</th>
               <th>Judul</th>
-              <th>Aksi</th>
+              <th style="width:100px">Aksi</th>
             </tr>
           </thead>
           <tbody>

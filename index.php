@@ -24,7 +24,9 @@ $tingkatan=$row2['tingkatan'];
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+  <link rel="stylesheet" href="js/plugins/datatables/dataTables.bootstrap.css">
 </head>
 <body>
   <!-- START PAGE CONTAINER -->
@@ -114,7 +116,7 @@ $tingkatan=$row2['tingkatan'];
   <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
   <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
 
-  <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery/jquery-2.2.3.min.js"></script>
   <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
 
@@ -137,24 +139,11 @@ $tingkatan=$row2['tingkatan'];
   <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
   <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
   <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="js/plugins/tableexport/tableExport.js"></script>
-  <script type="text/javascript" src="js/plugins/tableexport/jquery.base64.js"></script>
-  <script type="text/javascript" src="js/plugins/tableexport/html2canvas.js"></script>
-  <script type="text/javascript" src="js/plugins/tableexport/jspdf/libs/sprintf.js"></script>
-  <script type="text/javascript" src="js/plugins/tableexport/jspdf/jspdf.js"></script>
-  <script type="text/javascript" src="js/plugins/tableexport/jspdf/libs/base64.js"></script>
+  <script>$(function () {$("#dataTables").DataTable();});</script>
 
   <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
   <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
   <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
-
-  <script type="text/javascript" src="js/plugins/codemirror/codemirror.js"></script>
-  <script type='text/javascript' src="js/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-  <script type='text/javascript' src="js/plugins/codemirror/mode/xml/xml.js"></script>
-  <script type='text/javascript' src="js/plugins/codemirror/mode/javascript/javascript.js"></script>
-  <script type='text/javascript' src="js/plugins/codemirror/mode/css/css.js"></script>
-  <script type='text/javascript' src="js/plugins/codemirror/mode/clike/clike.js"></script>
-  <script type='text/javascript' src="js/plugins/codemirror/mode/php/php.js"></script>
 
   <script type="text/javascript" src="js/plugins/summernote/summernote.js"></script>
 
@@ -164,6 +153,7 @@ $tingkatan=$row2['tingkatan'];
   <script type="text/javascript" src="js/actions.js"></script>
 
   <script type="text/javascript" src="js/demo_dashboard.js"></script>
+
 
   <script type="text/javascript">
   $(document).on("click", ".editDialog", function () {

@@ -1,11 +1,11 @@
 <?php
 include 'koneksi.php';
-$hasil=mysqli_query($koneksi, "SELECT * FROM soal ORDER BY RAND ()");
+$hasil=mysqli_query($koneksi, "SELECT * FROM soal WHERE tingkatan=$tingkatan ORDER BY RAND ()");
 $jumlah=mysqli_num_rows($hasil);
 $urut=0;
 ?>
 <div class="col-md-12">
-  <form class="form-horizontal" name="form1" method="post" action="jawaban-pre.php">
+  <form class="form-horizontal" name="form1" method="post" action="jawaban-post.php">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><strong>Pre</strong> - Test</h3>

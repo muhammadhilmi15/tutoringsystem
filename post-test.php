@@ -1,6 +1,6 @@
 <?php
 include 'koneksi.php';
-$hasil=mysqli_query($koneksi, "SELECT * FROM soal WHERE tingkatan=$tingkatan ORDER BY RAND ()");
+$hasil=mysqli_query($koneksi, "SELECT * FROM soal WHERE id_tingkatan=$id_tingkatan ORDER BY RAND ()");
 $jumlah=mysqli_num_rows($hasil);
 $urut=0;
 ?>
@@ -8,7 +8,7 @@ $urut=0;
   <form class="form-horizontal" name="form1" method="post" action="jawaban-post.php">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><strong>Pre</strong> - Test</h3>
+        <h3 class="panel-title"><strong>Post</strong> - Test</h3>
         <ul class="panel-controls">
           <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
         </ul>

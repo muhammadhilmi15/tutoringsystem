@@ -15,6 +15,7 @@ $row2 = mysqli_fetch_array($coba2);
 $namauser=$row['nama'];
 $iduser=$row['id_user'];
 $level=$row['level'];
+$id_tingkatan=$row2['id_tingkatan'];
 $tingkatan=$row2['tingkatan'];
 ?>
 <!DOCTYPE html>

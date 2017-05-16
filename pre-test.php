@@ -5,7 +5,7 @@ $jumlah=mysqli_num_rows($hasil);
 $urut=0;
 ?>
 <div class="col-md-12">
-  <form class="form-horizontal" name="form1" method="post" action="jawaban-pre.php">
+  <form class="form-horizontal" name="form1" method="post" action="index.php?p=jawaban-pre">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><strong>Pre</strong> - Test</h3>

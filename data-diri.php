@@ -13,35 +13,35 @@ $row=mysqli_fetch_array($datadiri);
         <div class="row">
           <table class="table table-striped">
             <tr>
-              <td><label>ID User</label></td>
+              <td align="right"><label>ID User</label></td>
               <td><?php echo $row['id_user'];?></td>
             </tr>
             <tr>
-              <td><label>Nama</label></td>
+              <td align="right"><label>Nama</label></td>
               <td><?php echo $row['nama'];?></td>
             </tr>
             <tr>
-              <td><label>Jenis Kelamin</label></td>
+              <td align="right"><label>Jenis Kelamin</label></td>
               <td><?php echo $row['jenis_kelamin'];?></td>
             </tr>
             <tr>
-              <td><label>Email</label></td>
+              <td align="right"><label>Email</label></td>
               <td><?php echo $row['email'];?></td>
             </tr>
             <tr>
-              <td><label>Username</label></td>
+              <td align="right"><label>Username</label></td>
               <td><?php echo $row['username'];?></td>
             </tr>
             <tr>
-              <td><label>Password</label></td>
+              <td align="right"><label>Password</label></td>
               <td><?php echo $row['password'];?></td>
             </tr>
             <tr>
-              <td><label>Hak Akses</label></td>
+              <td align="right"><label>Hak Akses</label></td>
               <td><?php echo $row['level'];?></td>
             </tr>
             <tr>
-              <td><label>Kemampuan</label></td>
+              <td align="right"><label>Kemampuan</label></td>
               <td><?php echo $row['tingkatan'];?></td>
             </tr>
           </table>

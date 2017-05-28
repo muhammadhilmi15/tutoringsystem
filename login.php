@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="body-full-height">
 <head>
-  <title>Login | E-Learning</title>
+  <title>Login | Adaptive E-Learning</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,33 +18,34 @@
     ?>
     <div class="login-box animated fadeInDown">
       <div class="login" align="center">
-        <h1><span class="logo-mini"></span>
-          <a href="index.php"><b>E-Learning</b> With ITS</a></h1>
-        </div>
-        <div class="login-body">
-          <div class="login-title"><strong>Selamat datang</strong>, Silahkan login</div>
-          <form name="login" action="proses-login.php" class="form-horizontal" method="post">
-            <div class="form-group">
-              <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Username" name="username" />
-              </div>
+        <h1>
+          <a href="login.php"><b>ADAPTIVE</b> E-LEARNING</a>
+        </h1>
+      </div><br>
+      <div class="login-body">
+        <div class="login-title"><strong>Selamat datang</strong>, Silahkan login</div>
+        <form name="login" action="proses-login.php" class="form-horizontal" method="post">
+          <div class="form-group">
+            <div class="col-md-12">
+              <input type="text" class="form-control" placeholder="Username" name="username" />
             </div>
-            <div class="form-group">
-              <div class="col-md-12" >
-                <input type="password" class="form-control" placeholder="Password" name="password" />
-              </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12" >
+              <input type="password" class="form-control" placeholder="Password" name="password" />
             </div>
-            <div class="form-group">
-              <div class="col-md-6">
-                <button class="btn btn-info btn-block">Masuk</button>
-              </div>
-              <div class="col-md-6 login-subtitle">
-                Belum punya akun? <a href="buat-akun.php">Buat akun</a>
-              </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-6">
+              <button class="btn btn-info btn-block">Masuk</button>
             </div>
-          </form>
-        </div>
+            <div class="col-md-6 login-subtitle">
+              Belum punya akun? <a href="buat-akun.php">Buat akun</a>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-  </body>
-  </html>
+  </div>
+</body>
+</html>

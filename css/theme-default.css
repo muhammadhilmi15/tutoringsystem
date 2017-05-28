@@ -90,11 +90,10 @@ body {
   /* END RTL CONTENT MODE */
 }
 .div-thing{
-    height: 50px;
+    height:100px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    /*border: 1px solid #000;*/
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .page-container .page-sidebar {
   width: 220px;

@@ -21,7 +21,7 @@ $tingkatan=$row2['tingkatan'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>E-Learning With ITS</title>
+  <title>Adaptive E-Learning</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -133,29 +133,20 @@ $tingkatan=$row2['tingkatan'];
   <script type='text/javascript' src='js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
   <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
   <script type="text/javascript" src="js/plugins/owl/owl.carousel.min.js"></script>
-
   <script type="text/javascript" src="js/plugins/moment.min.js"></script>
   <script type="text/javascript" src="js/plugins/daterangepicker/daterangepicker.js"></script>
-
   <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
   <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
   <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
   <script>$(function () {$("#dataTables").DataTable();});</script>
-
   <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
   <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
   <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
-
   <script type="text/javascript" src="js/plugins/summernote/summernote.js"></script>
-
   <script type="text/javascript" src="js/settings.js"></script>
-
   <script type="text/javascript" src="js/plugins.js"></script>
   <script type="text/javascript" src="js/actions.js"></script>
-
   <script type="text/javascript" src="js/demo_dashboard.js"></script>
-
-
   <script type="text/javascript">
   $(document).on("click", ".editDialog", function () {
     var id_kategori = $(this).data('id');
@@ -164,7 +155,6 @@ $tingkatan=$row2['tingkatan'];
     $(".modal-body #id_kategori").val(id_kategori);
   });
   </script>
-
   <script type="text/javascript">
   $(document).on("click", ".editDialog2", function () {
     var id_bab = $(this).data('idbab');
@@ -175,6 +165,24 @@ $tingkatan=$row2['tingkatan'];
     $(".modal-body #id_bab").val(id_bab);
     $(".modal-body #kategori").val(kategori);
     $(".modal-body #bab").val(bab);
+  });
+  </script>
+  <script type="text/javascript">
+  $(document).on("click", ".editDialog3", function () {
+    var id_user = $(this).data('iduser');
+    var nama = $(this).data('nama');
+    var tgl = $(this).data('tgl');
+    var jk = $(this).data('jk');
+    var email = $(this).data('email');
+    var username = $(this).data('username');
+    var password = $(this).data('password');
+    $(".modal-body #id_user").val(id_user);
+    $(".modal-body #nama").val(nama);
+    $(".modal-body #datepicker").val(tgl);
+    $(".modal-body #jk").val(jk);
+    $(".modal-body #email").val(email);
+    $(".modal-body #username").val(username);
+    $(".modal-body #password").val(password);
   });
   </script>
 </body>

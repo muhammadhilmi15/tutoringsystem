@@ -9,6 +9,9 @@
   <a href="index.php?p=lihat-materi"><span class="fa fa-book"></span> <span class="xn-text">Materi</span></a>
 </li>
 <li>
+  <a href="index.php?p=statistik"><span class="fa fa-bar-chart-o"></span> <span class="xn-text">Statistik</span></a>
+</li>
+<li>
   <a href="index.php?p=data-diri"><span class="fa fa-user"></span> <span class="xn-text">Profil Diri</span></a>
 </li>
 </ul>

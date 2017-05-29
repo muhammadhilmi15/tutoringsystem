@@ -13,12 +13,12 @@ $row=mysqli_fetch_array($datadiri);
         <div class="row">
           <table class="table table-striped">
             <tr>
-              <td align="right"><label>ID User</label></td>
-              <td><?php echo $row['id_user'];?></td>
-            </tr>
-            <tr>
               <td align="right"><label>Nama</label></td>
               <td><?php echo $row['nama'];?></td>
+            </tr>
+            <tr>
+              <td align="right"><label>Tanggal Lahir</label></td>
+              <td><?php echo $row['tgl_lahir'];?></td>
             </tr>
             <tr>
               <td align="right"><label>Jenis Kelamin</label></td>

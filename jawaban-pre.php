@@ -83,8 +83,6 @@ if(isset($_POST['submit'])){
               <tr><td align="center"><h2><?php echo $salah;?></h2></td></tr>
               <tr><td align="center">Jumlah Jawaban Kosong</td></tr>
               <tr><td align="center"><h2><?php echo $kosong;?></h2></td></tr>
-              <tr><td align="center">Skor anda</td></tr>
-              <tr><td align="center"><h2 style="color:red"><?php echo $hasil;?></h2></td></tr>
               <tr><td align="center">Kemampuan anda pada tingkat</td></tr>
               <tr><td align="center"><h2 style="color:red"><?php echo $kemampuan;?></h2></td></tr>
             </table>

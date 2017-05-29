@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 28, 2017 at 04:01 PM
+-- Generation Time: May 29, 2017 at 03:30 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `its`
+-- Database: `elearning`
 --
 
 -- --------------------------------------------------------
@@ -180,12 +180,19 @@ CREATE TABLE `statistik` (
   `id_statistik` int(10) NOT NULL,
   `id_user` int(10) NOT NULL,
   `tgl_test` varchar(50) NOT NULL,
-  `skor` int(10) NOT NULL,
+  `skor` float NOT NULL,
   `id_tingkatan` int(10) NOT NULL,
   `jawaban_benar` int(10) NOT NULL,
   `jawaban_salah` int(10) NOT NULL,
   `jawaban_kosong` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `statistik`
+--
+
+INSERT INTO `statistik` (`id_statistik`, `id_user`, `tgl_test`, `skor`, `id_tingkatan`, `jawaban_benar`, `jawaban_salah`, `jawaban_kosong`) VALUES
+(4, 1, '1983', 3.7, 1, 1, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -246,7 +253,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `tgl_lahir`, `jenis_kelamin`, `email`, `username`, `password`, `id_level`, `id_tingkatan`) VALUES
-(1, 'Hilmi', '1996-11-15', 'Laki-laki', 'hilmihafid@gmail.com', 'mhmmdhlmhfd', '_bismillah99', 2, 1),
+(1, 'Muhammad Hilmi H.', '1996-11-15', 'Laki-laki', 'hilmihafid@gmail.com', 'mhmmdhlmhfd', '_bismillah99', 2, 1),
 (2, 'Fadhil', '1996-11-15', 'Laki-laki', 'fadhil@gmail.com', 'fadhil', 'fadhil', 1, NULL);
 
 --
@@ -346,7 +353,7 @@ ALTER TABLE `soal`
 -- AUTO_INCREMENT for table `statistik`
 --
 ALTER TABLE `statistik`
-  MODIFY `id_statistik` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_statistik` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `test`
 --

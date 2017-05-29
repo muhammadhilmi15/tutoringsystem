@@ -77,8 +77,9 @@ if(isset($_POST['submit'])){
             </table>
           </div>
           <div class="panel-footer">
-            <input type="button" class="btn btn-default" value="Test Ulang">
-            <input type="button" class="btn btn-primary pull-right" value="Lanjut">
+            <a href="index.php?p=mulai-test"><input type="button" class="btn btn-default" value="Test Ulang"></a>
+            <a href="index.php?p=update-statistik&&id_user=<?php echo $iduser;?>&&benar=<?php echo $benar;?>&&salah=<?php echo $salah;?>&&kosong=<?php echo $kosong;?>&&skor=<?php echo $hasil;?>&&id_tingkatan=<?php echo $id_tingkatan;?>">
+              <input type="button" class="btn btn-primary pull-right" value="Lanjut"></a>
           </div>
         </div>
       </div>

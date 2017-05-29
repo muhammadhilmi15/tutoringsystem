@@ -8,5 +8,5 @@ if($koneksi){
 } else {
 	echo 'Gagal melakukan koneksi ke Database : '.mysqli_connect_error();
 }
-$waktu=date("Y-m-d H:i:s");
+$waktu=date("Y-m-d");
 ?>

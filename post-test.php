@@ -5,7 +5,7 @@ $jumlah=mysqli_num_rows($hasil);
 $urut=0;
 ?>
 <div class="col-md-12">
-  <form class="form-horizontal" name="form1" method="post" action="jawaban-post.php">
+  <form class="form-horizontal" name="form1" method="post" action="index.php?p=jawaban-post">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><strong>Post</strong> - Test</h3>
@@ -15,7 +15,6 @@ $urut=0;
       </div>
       <div class="panel-body">
         <div class="col-md-10 col-md-offset-1">
-          <p><b>Petunjuk!</b> - Test ini bertujuan untuk mengukur kemampuan anda berada di tingkat easy, medium atau expert. Baca soal dengan baik dan teliti lalu pilih salah satu jawaban yang menurut anda benar!</p>
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Soal Test Pilihan Ganda</h3>

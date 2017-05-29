@@ -1,5 +1,6 @@
 <?php
 include 'koneksi.php';
+$query=mysqli_query($koneksi,"SELECT * FROM statistik s, tingkatan t WHERE s.id_tingkatan=t.id_tingkatan AND id_user=$iduser");
 ?>
 <div class="col-md-12">
   <div class="panel panel-default">
@@ -23,15 +24,17 @@ include 'koneksi.php';
           </tr>
         </thead>
         <tbody>
+          <?php while ($row=mysqli_fetch_array($query)) { ?>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td><?php echo $row['id_statistik']; ?></td>
+              <td><?php echo $row['tgl_test']; ?></td>
+              <td><?php echo $row['jawaban_benar']; ?></td>
+              <td><?php echo $row['jawaban_salah']; ?></td>
+              <td><?php echo $row['jawaban_kosong']; ?></td>
+              <td><?php echo $row['skor']; ?></td>
+              <td><?php echo $row['tingkatan']; ?></td>
             </tr>
+          <?php } ?>
           </tbody>
         </table>
     </div>

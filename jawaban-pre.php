@@ -1,6 +1,5 @@
 <?php
 include('koneksi.php');
-
 if(isset($_POST['submit'])){
   $pilihan=$_POST["pilihan"];
   $id_soal=$_POST["id"];
@@ -10,32 +9,22 @@ if(isset($_POST['submit'])){
   $salah=0;
   $kosong=0;
   for ($i=0;$i<$jumlah;$i++){
-    //id nomor soal
     $nomor=$id_soal[$i];
-    //jika user tidak memilih jawaban
     if (empty($pilihan[$nomor])){
       $kosong++;
     }else{
-      //jawaban dari user
       $jawaban=$pilihan[$nomor];
-      //cocokan jawaban user dengan jawaban di database
       $query=mysqli_query($koneksi,"SELECT * FROM soal WHERE id_soal='$nomor' AND kunci_jawaban='$jawaban'");
       $cek=mysqli_num_rows($query);
       if($cek){
-        //jika jawaban cocok (benar)
         $benar++;
       }else{
-        //jika salah
         $salah++;
       }
     }
-    /*RUMUS
-    Jika anda ingin mendapatkan Nilai 100, berapapun jumlah soal yang ditampilkan
-    hasil= 100 / jumlah soal * jawaban yang benar
-    */
     $result=mysqli_query($koneksi, "SELECT * FROM soal");
     $jumlah_soal=mysqli_num_rows($result);
-    $score = 100/$jumlah_soal*$benar;
+    $score = ($benar/$jumlah_soal)*100;
     $hasil = number_format($score,1);
     if ($hasil<40.0) {
       $kemampuan="EASY";

@@ -9,32 +9,22 @@ if(isset($_POST['submit'])){
   $kosong=0;
   $salah=0;
   for ($i=0;$i<$jumlah;$i++){
-    //id nomor soal
     $nomor=$id_soal[$i];
-    //jika user tidak memilih jawaban
     if (empty($pilihan[$nomor])){
       $kosong++;
     }else{
-      //jawaban dari user
       $jawaban=$pilihan[$nomor];
-      //cocokan jawaban user dengan jawaban di database
       $query=mysqli_query($koneksi,"SELECT * FROM soal WHERE id_soal='$nomor' AND kunci_jawaban='$jawaban'");
       $cek=mysqli_num_rows($query);
       if($cek){
-        //jika jawaban cocok (benar)
         $benar++;
       }else{
-        //jika salah
         $salah++;
       }
     }
-    /*RUMUS
-    Jika anda ingin mendapatkan Nilai 100, berapapun jumlah soal yang ditampilkan
-    hasil= 100 / jumlah soal * jawaban yang benar
-    */
-    $result=mysqli_query($koneksi, "SELECT * FROM soal");
+    $result=mysqli_query($koneksi, "SELECT * FROM soal WHERE id_tingkatan=$id_tingkatan");
     $jumlah_soal=mysqli_num_rows($result);
-    $score = 100/$jumlah_soal*$benar;
+    $score = ($benar/$jumlah_soal)*100;
     $hasil = number_format($score,1);
   }
 }
@@ -74,6 +64,10 @@ if(isset($_POST['submit'])){
               <tr><td align="center"><h2><?php echo $kosong;?></h2></td></tr>
               <tr><td align="center">Skor anda</td></tr>
               <tr><td align="center"><h2 style="color:red"><?php echo $hasil;?></h2></td></tr>
+              <?php if ($hasil<100.0) { ?>
+                <tr><td align="center">Anda Perlu Mempelajari Materi</td></tr>
+                <tr><td align="center"><a href="index.php?p=rekomendasi-materi&&id_bab=8">Virus</a> dan <a href="index.php?p=rekomendasi-materi&&id_bab=6">Archaebakteria</a></td></tr>
+              <?php } ?>
             </table>
           </div>
           <div class="panel-footer">
